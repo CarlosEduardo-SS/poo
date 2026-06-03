@@ -13,10 +13,17 @@ public class Aluno {
     static String piorAluno;
     static double soma = 0;
     static int quantidade = 0;
+    String situacao;
+
+    public Aluno(String nome, double nota1, double nota2){
+        this.nome = nome;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+    }
 
     void calcularMedia(){
         media = (nota1 + nota2) / 2;
-        System.out.println("A média aritmética do aluno " + nome + " é: " + media);
+        System.out.println("\nA média aritmética do aluno " + nome + " é: " + media);
 
         quantidade++;
 
@@ -33,9 +40,10 @@ public class Aluno {
 
     void verificarSituacao(){
         if (media >= 7) {
-            System.out.println("Aprovado");
+            situacao = "Aprovado";
         } else {
-            System.out.println("Reprovado");
+            situacao = "Reprovado";
+
         }
 
         if (media >= 7) {
@@ -48,11 +56,20 @@ public class Aluno {
 
         double mediaGeral = soma / quantidade;
 
-        System.out.print("Total de aprovados: " + aprovados + "\n");
+        System.out.print("\nSituação do aluno: " + situacao + "\n");
+        System.out.print("\nTotal de aprovados: " + aprovados + "\n");
         System.out.print("Total de reprovados: " + reprovados + "\n");
-        System.out.print("O aluno " + melhorAluno + " tem a maior média de " + maiorMedia + "\n");
-        System.out.print("O aluno " + piorAluno + " tem a menor média de " + menorMedia + "\n");
-        System.out.print("Média geral da turma: " + mediaGeral + "\n");
+        System.out.print("\nO aluno " + melhorAluno + " tem a maior média = " + maiorMedia + "\n");
+        System.out.print("O aluno " + piorAluno + " tem a menor média = " + menorMedia + "\n");
+        System.out.print("\nMédia geral da turma: " + mediaGeral + "\n");
+    }
+
+    void mostrarDados(){
+        System.out.println("\nNome: " + nome);
+        System.out.println("Nota 1: " + nota1);
+        System.out.println("Nota 2: " + nota2);
+        System.out.println("Média: " + media);
+        System.out.println("Situação: " + situacao);
     }
 }        
 

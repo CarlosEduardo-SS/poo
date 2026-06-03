@@ -8,6 +8,12 @@ public class Produto {
     static double precoCaro = 0;
     static String nomeCaro;
 
+    public Produto(String nome, double preco, int quantidade){
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
     double calcularValorTotal(){
         return preco * quantidade;
     }
@@ -18,10 +24,10 @@ public class Produto {
             nomeCaro = nome;
         }
 
-        System.out.println("Produto: " + nome);
+        System.out.println("\nProduto: " + nome);
         System.out.println("Preço: " + preco);
         System.out.println("Quantidade: " + quantidade);
-        System.out.println("Valor total do produto: R$ " + calcularValorTotal());
+        System.out.println("\nValor total do produto: R$ " + calcularValorTotal());
         System.out.println("O produto mais caro é: " + nomeCaro + " R$ " + precoCaro);
     }
 }
